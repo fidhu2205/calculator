@@ -1,93 +1,49 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Pink Advanced Calculator</title>
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Calculator</title>
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="page">
-    <section class="calculator" id="calculator" aria-label="Advanced calculator">
-      <header class="calc-header">
-        <h1>Pink Advanced Calculator</h1>
-        <div class="controls" aria-hidden="false">
-          <label class="color-label" title="Pick calculator background color">
-            Background
-            <input id="bgPicker" type="color" value="#ffc0cb" aria-label="Background color picker">
-          </label>
-          <button id="themeToggle" title="Toggle light/dark theme" aria-pressed="false">🌙</button>
-        </div>
-      </header>
+<div class="calculator">
+<h1>🌸 Calculator</h1>
+<input type="text" id="display" disabled />
 
-      <section class="display-area">
-        <div id="history" class="history" aria-live="polite"></div>
-        <div class="display" id="display" role="status" aria-live="polite">0</div>
-      </section>
 
-      <section class="keypad" id="keypad" role="application" aria-label="Calculator keypad">
-        <div class="row">
-          <button class="btn small" data-action="mc">MC</button>
-          <button class="btn small" data-action="mplus">M+</button>
-          <button class="btn small" data-action="mminus">M-</button>
-          <button class="btn small" data-action="mr">MR</button>
-          <button class="btn danger" data-action="clear">C</button>
-        </div>
+<div class="buttons">
+<button onclick="clearDisplay()">C</button>
+<button onclick="deleteLast()">⌫</button>
+<button onclick="append('%')">%</button>
+<button onclick="append('/')">÷</button>
 
-        <div class="row">
-          <button class="btn" data-action="sqrt">√</button>
-          <button class="btn" data-action="pow">xʸ</button>
-          <button class="btn" data-action="percent">%</button>
-          <button class="btn" data-action="fact">n!</button>
-          <button class="btn" data-action="paren">()</button>
-        </div>
 
-        <div class="row">
-          <button class="btn func" data-insert="sin(">sin</button>
-          <button class="btn func" data-insert="cos(">cos</button>
-          <button class="btn func" data-insert="tan(">tan</button>
-          <button class="btn func" data-insert="log10(">log</button>
-          <button class="btn func" data-insert="ln(">ln</button>
-        </div>
+<button onclick="append('7')">7</button>
+<button onclick="append('8')">8</button>
+<button onclick="append('9')">9</button>
+<button onclick="append('*')">×</button>
 
-        <div class="row">
-          <button class="btn digit" data-insert="7">7</button>
-          <button class="btn digit" data-insert="8">8</button>
-          <button class="btn digit" data-insert="9">9</button>
-          <button class="btn op" data-insert="/">÷</button>
-          <button class="btn op" data-insert="*">×</button>
-        </div>
 
-        <div class="row">
-          <button class="btn digit" data-insert="4">4</button>
-          <button class="btn digit" data-insert="5">5</button>
-          <button class="btn digit" data-insert="6">6</button>
-          <button class="btn op" data-insert="-">−</button>
-          <button class="btn op" data-insert="+">+</button>
-        </div>
+<button onclick="append('4')">4</button>
+<button onclick="append('5')">5</button>
+<button onclick="append('6')">6</button>
+<button onclick="append('-')">−</button>
 
-        <div class="row">
-          <button class="btn digit" data-insert="1">1</button>
-          <button class="btn digit" data-insert="2">2</button>
-          <button class="btn digit" data-insert="3">3</button>
-          <button class="btn" data-action="pi">π</button>
-          <button class="btn" data-action="e">e</button>
-        </div>
 
-        <div class="row">
-          <button class="btn wide digit" data-insert="0">0</button>
-          <button class="btn" data-insert=".">.</button>
-          <button class="btn" data-action="back">⌫</button>
-          <button class="btn equal" id="equals" data-action="equals">=</button>
-        </div>
+<button onclick="append('1')">1</button>
+<button onclick="append('2')">2</button>
+<button onclick="append('3')">3</button>
+<button onclick="append('+')">+</button>
 
-        <footer class="footer">
-          <small>Keyboard: numbers, + - * /, Enter =, Backspace delete, Escape clear, ^ exponent</small>
-        </footer>
-      </section>
-    </section>
-  </main>
 
-  <script src="script.js"></script>
+<button class="zero" onclick="append('0')">0</button>
+<button onclick="append('.')">.</button>
+<button class="equals" onclick="calculate()">=</button>
+</div>
+</div>
+
+
+<script src="script.js"></script>
 </body>
 </html>
